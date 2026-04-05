@@ -1,6 +1,6 @@
 const prisma = require("../config/prisma");
 
-// 🔥 helper
+// helper
 const getUserFilter = (user) => {
   if (user.role === "VIEWER") {
     return { userId: user.id };
@@ -8,7 +8,6 @@ const getUserFilter = (user) => {
   return {};
 };
 
-// 🔥 UPDATED
 exports.getSummary = async () => {
   const income = await prisma.transaction.aggregate({
     _sum: { amount: true },
@@ -30,7 +29,6 @@ exports.getSummary = async () => {
   };
 };
 
-// 🔥 UPDATED
 exports.getCategoryWise = async (user) => {
   const whereFilter = getUserFilter(user);
 
@@ -45,7 +43,6 @@ exports.getCategoryWise = async (user) => {
   });
 };
 
-// 🔥 UPDATED
 exports.getTrends = async (user) => {
   if (user.role === "VIEWER") {
     throw { status: 403, message: "Forbidden" };
@@ -63,7 +60,6 @@ exports.getTrends = async (user) => {
   `;
 };
 
-// 🔥 UPDATED
 exports.getRecent = async () => {
   return prisma.transaction.findMany({
     orderBy: { date: "desc" },

@@ -1,4 +1,3 @@
-// src/repositories/transaction.repository.js
 const prisma = require("../config/prisma");
 
 exports.create = (data) => prisma.transaction.create({ data });

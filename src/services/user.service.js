@@ -1,11 +1,11 @@
 const repo = require("../repositories/user.repository");
 
-// ✅ Get all users
+// Get all users
 exports.getAllUsers = async () => {
   return repo.findAll();
 };
 
-// ✅ Update user (role/status)
+// Update user (role/status)
 exports.updateUser = async (id, data) => {
   const user = await repo.findById(id);
 
@@ -19,7 +19,7 @@ exports.updateUser = async (id, data) => {
   });
 };
 
-// ✅ Delete user
+// Delete user
 exports.deleteUser = async (id, currentUserId) => {
   const user = await repo.findById(id);
 

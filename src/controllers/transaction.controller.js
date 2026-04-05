@@ -1,4 +1,3 @@
-// src/controllers/transaction.controller.js
 const service = require("../services/transaction.service");
 
 exports.create = async (req, res, next) => {

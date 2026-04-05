@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:8000",
+        url: process.env.BASE_URL || "http://localhost:8000",
       },
     ],
     components: {
@@ -28,7 +28,7 @@ const options = {
       },
     ],
   },
-  apis: ["./src/routes/*.js"], // 👈 important
+  apis: ["./src/routes/*.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

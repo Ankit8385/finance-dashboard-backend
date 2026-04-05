@@ -1,4 +1,3 @@
-// src/services/transaction.service.js
 const repo = require("../repositories/transaction.repository");
 
 exports.createTransaction = async (data, userId) => {
@@ -9,7 +8,6 @@ exports.createTransaction = async (data, userId) => {
   });
 };
 
-// 🔥 UPDATED
 exports.getTransactions = async (user, query) => {
   const { type, category, startDate, endDate, page = 1, limit = 10 } = query;
 
@@ -43,7 +41,6 @@ exports.getTransactions = async (user, query) => {
   return repo.findAllWithPagination(filters, skip, Number(limit));
 };
 
-// 🔥 UPDATED
 exports.getTransactionById = async (id, user) => {
   const transaction = await repo.findById(id);
 
@@ -54,7 +51,6 @@ exports.getTransactionById = async (id, user) => {
   return transaction;
 };
 
-// 🔥 UPDATED (extra safety, though middleware already protects)
 exports.updateTransaction = async (id, data, user) => {
   const transaction = await repo.findById(id);
 
@@ -72,7 +68,6 @@ exports.updateTransaction = async (id, data, user) => {
   });
 };
 
-// 🔥 UPDATED
 exports.deleteTransaction = async (id, user) => {
   const transaction = await repo.findById(id);
 

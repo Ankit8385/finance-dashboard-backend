@@ -64,7 +64,7 @@ describe("Role base access control", () => {
     ).body.token;
   });
 
-  // 🧪 VIEWER TESTS
+  // VIEWER TESTS
   it("Viewer cann't view transactions", async () => {
     const res = await request(app)
       .get("/api/transactions")
@@ -87,7 +87,7 @@ describe("Role base access control", () => {
     expect(res.statusCode).toBe(403);
   });
 
-  // 🧪 ANALYST TESTS
+  // ANALYST TESTS
   it("Analyst can view transactions", async () => {
     const res = await request(app)
       .get("/api/transactions")
@@ -110,7 +110,7 @@ describe("Role base access control", () => {
     expect(res.statusCode).toBe(403);
   });
 
-  // 🧪 ADMIN TESTS
+  // ADMIN TESTS
   it("Admin can create transaction", async () => {
     const res = await request(app)
       .post("/api/transactions")
