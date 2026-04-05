@@ -105,11 +105,11 @@ finance-dashboard-backend/
 
 ### 4. Access Control (RBAC)
 
-| Role    | Permissions                   |
-| ------- | ----------------------------- |
-| Viewer  | View dashboard & transactions |
-| Analyst | View data + insights          |
-| Admin   | Full CRUD + user management   |
+| Role    | Permissions                 |
+| ------- | --------------------------- |
+| Viewer  | View dashboard              |
+| Analyst | View data + insights        |
+| Admin   | Full CRUD + user management |
 
 ---
 
