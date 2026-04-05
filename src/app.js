@@ -15,7 +15,13 @@ const { apiLimiter } = require("./middleware/rateLimit.middleware");
 const app = express();
 app.set("etag", false);
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // allow all
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 app.use(express.json());
 app.use(morgan("dev"));
 
