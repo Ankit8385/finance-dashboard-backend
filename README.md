@@ -3,6 +3,10 @@
 A production-ready backend system for managing financial records, user roles, and analytics dashboards.
 Built with a focus on clean architecture, role-based access control, and real-world backend practices.
 
+### Live API
+
+- Swagger Docs: https://finance-dashboard-backend-qjoi.onrender.com/api-docs/
+
 ---
 
 ## 🚀 Tech Stack
